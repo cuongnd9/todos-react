@@ -14,7 +14,7 @@ class App extends Component {
 
   componentWillMount() {
     const data = JSON.parse(localStorage.getItem('todos')) || []
-    this.setState({ 
+    this.setState({
       todoItems: data,
       todosFilter: data
     })
@@ -22,9 +22,8 @@ class App extends Component {
 
   async handleItemClicked(value) {
     const { todosFilter, todoItems } = this.state
-    const index = todosFilter.indexOf(value)
-    const _index = todoItems.indexOf(value)
-    
+    const index = this.findIndex(todosFilter, value)
+    const _index = this.findIndex(todoItems, value)
     await this.setState({
       todosFilter: [
         ...todosFilter.slice(0, index),
@@ -47,6 +46,17 @@ class App extends Component {
     localStorage.setItem('todos', JSON.stringify(this.state.todoItems))
   }
 
+  findIndex(items, item) {
+    let index = -1
+    items.forEach((element, i) => {
+      if (element.title === item.title
+      && element.isComplete === item.isComplete) {
+        index = i
+      }
+    })
+    return index
+  }
+
   handleValueChange(e) {
     const { value } = e.target
     this.setState({ text: value})
@@ -56,7 +66,7 @@ class App extends Component {
     if (e.keyCode !== 13) return
 
     const { todoItems, text } = this.state
-    
+
     await this.setState({
       text: '',
       todoItems: [
@@ -100,31 +110,31 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="App-title">todos({countTodos})</h1>
-        <input 
-          className="input input-text" 
-          type="text" 
+        <input
+          className="input input-text"
+          type="text"
           placeholder="Enter your todo..."
           value={this.state.text}
           onChange={this.handleValueChange.bind(this)}
           onKeyUp={this.handleKeyUp.bind(this)}
         />
         <div className="group-button">
-          <button 
-            className="input input-button" 
+          <button
+            className="input input-button"
             type="button"
             onClick={this.handleFilter.bind(this, 0)}
           >
             All
           </button>
-          <button 
-            className="input input-button" 
+          <button
+            className="input input-button"
             type="button"
             onClick={this.handleFilter.bind(this, -1)}
           >
             Active
           </button>
-          <button 
-            className="input input-button" 
+          <button
+            className="input input-button"
             type="button"
             onClick={this.handleFilter.bind(this, 1)}
           >
@@ -134,9 +144,9 @@ class App extends Component {
         {
           todosFilter.length > 0 && todosFilter.map((item, index) =>
             <TodoItem
-              key={ index } 
+              key={ index }
               item={ item }
-              onClick={this.handleItemClicked.bind(this)} 
+              onClick={this.handleItemClicked.bind(this)}
             />
           )
         }
