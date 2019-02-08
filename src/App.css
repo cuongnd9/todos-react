@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: blue;
+  font-weight: lighter;
+}
+
+.input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color: gray;
+  font-weight: lighter;
+  width: 270px;
+  margin-bottom: 20px;
+}
+
+.input-text {
+  padding: 10px 12px;
+  font-size: 20px;
+}
+
+.group-button {
+  display: flex;
+}
+
+.input-button {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 5px;
+  border: none;
+  background-color: lightgray;
+}
+
+.empty {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 24px;
+  color: red;
+  font-weight: lighter;
+}
