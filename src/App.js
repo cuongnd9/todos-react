@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+import './App.css'
 import TodoItem from './components/TodoItem'
 
 class App extends Component {
@@ -156,6 +158,22 @@ class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  text: PropTypes.string,
+  todoItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      isComplete: PropTypes.bool.isRequired
+    })
+  ),
+  todosFilter: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      isComplete: PropTypes.bool.isRequired
+    })
+  )
 }
 
 export default App;
