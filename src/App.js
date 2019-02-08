@@ -22,6 +22,10 @@ class App extends Component {
     })
   }
 
+  componentDidMount() {
+    this.refs.textInput.focus()
+  }
+
   async handleItemClicked(value) {
     const { todosFilter, todoItems } = this.state
     const index = this.findIndex(todosFilter, value)
@@ -119,6 +123,7 @@ class App extends Component {
           value={this.state.text}
           onChange={this.handleValueChange.bind(this)}
           onKeyUp={this.handleKeyUp.bind(this)}
+          ref='textInput'
         />
         <div className="group-button">
           <button
