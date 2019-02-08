@@ -1,4 +1,23 @@
-# Simple React
-🐢 Getting Started with React.
+# todos-react
 
-![React](https://blog.algolia.com/wp-content/uploads/2015/11/React_illo_final_720x400.png)
+[![Build Status](https://travis-ci.org/cuongw/todos-react.svg?branch=master)](https://travis-ci.org/cuongw/todos-react)
+![](https://img.shields.io/david/cuongw/todos-react.svg?style=flat-square)
+![](https://img.shields.io/github/license/cuongw/todos-react.svg?style=flat-square)
+
+> 🌲 Todos with React.
+
+## Installation
+
+```
+$ npm install
+```
+
+## Usage
+
+```
+$ npm start
+```
+
+## License
+
+MIT
